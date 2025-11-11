@@ -1,0 +1,5 @@
+spring:
+  application:
+   name: advanced-chat-server
+  jpa:
+    open-in-view: false
