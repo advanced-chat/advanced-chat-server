@@ -1,10 +1,10 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.3.0-RC3'
-    id 'org.jetbrains.kotlin.plugin.spring' version '2.3.0-RC3'
-    id 'org.jetbrains.kotlin.plugin.jpa' version '2.3.0-RC3'
-    id 'org.springframework.boot' version '4.0.0'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'org.jetbrains.kotlin.plugin.spring' version '2.3.0'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '2.3.0'
+    id 'org.springframework.boot' version '4.0.1'
     id 'io.spring.dependency-management' version '1.1.7'
-    id 'org.hibernate.orm' version '7.1.7.Final'
+    id 'org.hibernate.orm' version '7.2.0.Final'
     id 'org.antora' version '1.0.0'
     id 'io.spring.antora.generate-antora-yml' version '0.0.1'
     id 'nebula.lint' version '21.1.3'
@@ -29,7 +29,8 @@ repositories {
 }
 
 ext {
-    set('springModulithVersion', '2.0.0')
+    set('flyway.version', '11.19.1')
+    set('springModulithVersion', '2.0.1')
 }
 
 dependencyManagement {
@@ -80,6 +81,10 @@ gitHooks {
     hooks = ['pre-commit': 'spotlessApply']
 }
 
+tasks.withType(AbstractTestTask).configureEach {
+    failOnNoDiscoveredTests = false
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-batch'
@@ -116,8 +121,4 @@ dependencies {
     testImplementation 'org.springframework.restdocs:spring-restdocs-webtestclient'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-tasks.named("build") {
-    dependsOn("gitHooksInstall")
 }
