@@ -3,3 +3,8 @@ spring:
    name: advanced-chat-server
   jpa:
     open-in-view: false
+    hibernate:
+      ddl-auto: update
+  modulith:
+    runtime:
+      verification-enabled: true

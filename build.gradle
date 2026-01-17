@@ -29,7 +29,7 @@ repositories {
 }
 
 ext {
-    set('flyway.version', '11.19.1')
+    set('flyway.version', '11.20.1')
     set('springModulithVersion', '2.0.1')
 }
 
@@ -63,7 +63,7 @@ spotless {
 
         removeUnusedImports()
 
-        importOrder 'java', 'javax', 'org', 'com', 'org.advancedchat'
+        importOrder 'java', 'javax', 'jakarta', 'org', 'com', 'org.advancedchat'
     }
 
     kotlin {
@@ -103,15 +103,15 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'io.projectreactor.kotlin:reactor-kotlin-extensions'
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.flywaydb:flyway-database-postgresql'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
     runtimeOnly 'org.springframework.modulith:spring-modulith-actuator'
     runtimeOnly 'org.springframework.modulith:spring-modulith-observability'
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+    runtimeOnly 'org.springframework.boot:spring-boot-docker-compose'
     runtimeOnly 'org.postgresql:postgresql'
+    runtimeOnly 'org.flywaydb:flyway-core'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.batch:spring-batch-test'
     testImplementation 'org.springframework.graphql:spring-graphql-test'
@@ -121,6 +121,5 @@ dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test'
     testImplementation 'io.projectreactor:reactor-test'
-    testImplementation 'com.opentable.components:otj-pg-embedded:1.1.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

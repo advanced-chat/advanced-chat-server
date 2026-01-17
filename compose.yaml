@@ -2,9 +2,9 @@ services:
   postgres:
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=mydatabase'
+      - 'POSTGRES_DB=advanced_chat_db'
       - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_USER=advanced_chat_user'
     ports:
       - '5432'
   redis:
