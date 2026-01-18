@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 
 @Component
-@Profile("demo")
+@Profile("dev")
 class DemoApplicationRunner(private val service: UserService) : ApplicationRunner {
   override fun run(args: ApplicationArguments) {
     if (service.readUser("test") != null) return

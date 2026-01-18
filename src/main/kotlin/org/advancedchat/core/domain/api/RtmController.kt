@@ -1,4 +1,4 @@
-package org.advancedchat.core.api
+package org.advancedchat.core.domain.api
 
 import org.springframework.stereotype.Controller
 

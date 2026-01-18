@@ -1,10 +1,10 @@
 spring:
   application:
-   name: advanced-chat-server
+    name: advanced-chat-server
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   modulith:
     runtime:
       verification-enabled: true
