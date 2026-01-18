@@ -4,11 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import * as path from "node:path";
 
+import viteSpringBootPlugin from './src/main/vite/spring-boot-plugin'
+
 export default defineConfig({
     plugins: [
         vue(),
         tailwindcss(),
-        vueDevTools()
+        vueDevTools(),
+        viteSpringBootPlugin({
+            verbose: true
+        })
     ],
     root: path.join(__dirname, './src/main/vue'),
     build: {
