@@ -8,3 +8,5 @@ spring:
   modulith:
     runtime:
       verification-enabled: true
+vite:
+  mode: build

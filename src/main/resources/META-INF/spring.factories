@@ -1,0 +1,2 @@
+org.springframework.context.ApplicationContextInitializer=\
+  org.advancedchat.core.vite.configuration.ViteServerConfigurationPropertiesContextInitializer

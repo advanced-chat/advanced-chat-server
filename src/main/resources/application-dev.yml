@@ -2,3 +2,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+vite:
+  mode: dev
