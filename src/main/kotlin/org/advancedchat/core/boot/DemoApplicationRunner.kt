@@ -1,4 +1,4 @@
-package org.advancedchat.boot
+package org.advancedchat.core.boot
 
 import org.advancedchat.application.user.service.CreateUserRequest
 import org.advancedchat.application.user.service.UserService

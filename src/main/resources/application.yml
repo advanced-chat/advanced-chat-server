@@ -10,3 +10,6 @@ spring:
       verification-enabled: true
 vite:
   mode: build
+logging:
+  level:
+    root: debug

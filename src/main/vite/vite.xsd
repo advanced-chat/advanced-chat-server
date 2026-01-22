@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://advancedchat.org/vite"
+        xmlns="http://advancedchat.org/vite"
+        elementFormDefault="qualified">
+
+    <xsd:element name="client" />
+
+    <xsd:element name="vite">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:attribute name="value" type="xsd:string" use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
