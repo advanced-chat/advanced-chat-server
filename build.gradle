@@ -10,7 +10,6 @@ plugins {
     id 'nebula.lint' version '21.1.3'
     id 'com.diffplug.spotless' version '8.1.0'
     id 'com.gorylenko.gradle-git-properties' version '2.5.4'
-    id 'com.github.jakemarsden.git-hooks' version '0.0.2'
     id 'com.github.ben-manes.versions' version '0.53.0'
 }
 
@@ -76,10 +75,6 @@ gitProperties {
     keys = ['git.branch', 'git.commit.id', 'git.commit.time']
     dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     dateFormatTimeZone = 'UTC'
-}
-
-gitHooks {
-    hooks = ['pre-commit': 'spotlessApply']
 }
 
 springBoot {

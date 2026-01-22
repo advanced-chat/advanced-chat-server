@@ -9,7 +9,13 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
     "format": "prettier --write src/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{vue,ts,js,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@advanced-chat/components": "file:../vue-advanced-chat",
@@ -29,6 +35,8 @@
     "eslint": "^9.37.0",
     "eslint-plugin-vue": "~10.5.0",
     "globby": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "3.6.2",
     "sass-embedded": "^1.93.3",
     "tailwindcss": "^4.1.18",
