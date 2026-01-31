@@ -9,5 +9,5 @@ class UserServiceImpl(private val repository: UserRepository) : UserService {
   override fun createUser(request: CreateUserRequest): User =
       with(request) { repository.save(User(name, displayName)) }
 
-  override fun readUser(name: String): User? = repository.readUserByName(name)
+  override fun retrieveUser(name: String): User? = repository.findUserByName(name)
 }

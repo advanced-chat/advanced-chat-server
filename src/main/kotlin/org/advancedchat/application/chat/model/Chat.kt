@@ -1,4 +1,4 @@
-package org.advancedchat.application.user.model
+package org.advancedchat.application.chat.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -11,11 +11,11 @@ import org.hibernate.annotations.Cache
 import org.hibernate.annotations.CacheConcurrencyStrategy
 
 @Entity
-@Table(name = "users")
-@SequenceGenerator(name = "users_id_generator", sequenceName = "users_id_sequence")
+@Table(name = "chats")
+@SequenceGenerator(name = "chats_id_generator", sequenceName = "chats_id_sequence")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-class User(var name: String, var displayName: String) : DomainModel() {
+class Chat(var name: String) : DomainModel() {
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_id_generator")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "chats_id_generator")
   override var id: Long = 0
 }

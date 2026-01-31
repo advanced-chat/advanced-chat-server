@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <title>My AdvancedChat App</title>
     <vite:client></vite:client>
+    <script th:inline="javascript">
+      window.$advancedChatConfiguration = /*[[${advancedChatConfiguration}]]*/ {}
+    </script>
     <vite:vite>
-      <vite:entry value="main.ts"></vite:entry>
+      <vite:entry value="index.ts"></vite:entry>
     </vite:vite>
   </head>
   <body>
-    <div id="app">Loading...</div>
+    <div id="app"></div>
   </body>
 </html>

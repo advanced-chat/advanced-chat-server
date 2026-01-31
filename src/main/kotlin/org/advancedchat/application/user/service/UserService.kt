@@ -5,5 +5,5 @@ import org.advancedchat.application.user.model.User
 interface UserService {
   fun createUser(request: CreateUserRequest): User
 
-  fun readUser(name: String): User?
+  fun retrieveUser(name: String): User?
 }

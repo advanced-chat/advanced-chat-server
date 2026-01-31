@@ -10,5 +10,5 @@ class AuthenticatedUserRtmApi(private val service: UserService) {
   @RelayMapping("user.authenticated-user.relayed")
   @SubscribeMapping("/user.relay")
   fun getUser(): AuthenticatedUserRepresentation =
-      AuthenticatedUserRepresentation(service.readUser("test")!!.name)
+      AuthenticatedUserRepresentation(service.retrieveUser("test")!!.name)
 }

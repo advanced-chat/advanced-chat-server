@@ -10,7 +10,10 @@ fun <R : Any> R.loggerFactory(): ReadOnlyProperty<R, Logger> {
 
   val javaClass = kClass.java
 
-  val clazz = if (kClass.companionObject != null) javaClass.enclosingClass else javaClass
+  val clazz =
+      javaClass.enclosingClass?.takeIf { it.kotlin.companionObject?.java == javaClass } ?: javaClass
 
-  return ReadOnlyProperty { _, _ -> LoggerFactory.getLogger(clazz) }
+  val logger = LoggerFactory.getLogger(clazz)
+
+  return ReadOnlyProperty { _, _ -> logger }
 }

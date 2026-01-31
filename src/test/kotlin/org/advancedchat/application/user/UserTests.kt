@@ -9,6 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest
 class UserTests(private val service: UserService) {
   @Test
   fun verifyCreateUser() {
-    assertFalse(service.readUser("test") != null)
+    assertFalse(service.retrieveUser("test") != null)
   }
 }

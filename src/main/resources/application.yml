@@ -1,3 +1,8 @@
+server:
+  servlet:
+    session:
+      cookie:
+        name: SESSION
 spring:
   application:
     name: advanced-chat-server
@@ -12,4 +17,4 @@ vite:
   mode: build
 logging:
   level:
-    root: debug
+    root: info

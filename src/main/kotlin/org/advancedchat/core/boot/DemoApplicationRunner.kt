@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component
 @Profile("dev")
 class DemoApplicationRunner(private val service: UserService) : ApplicationRunner {
   override fun run(args: ApplicationArguments) {
-    if (service.readUser("test") != null) return
+    if (service.retrieveUser("test") != null) return
 
     service.createUser(CreateUserRequest("test", "Test User"))
   }

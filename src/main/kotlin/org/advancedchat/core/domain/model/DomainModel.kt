@@ -7,5 +7,5 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
 abstract class DomainModel {
-  abstract var id: Long?
+  abstract var id: Long
 }
