@@ -1,4 +1,4 @@
-import type { ApplicationCoordinator } from './types.ts'
+import type { ApplicationCoordinator } from './definitions.ts'
 
 export type ApplicationCoordinatorOptions = {
   bundle: 'generic-chat'

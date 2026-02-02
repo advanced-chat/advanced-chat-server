@@ -1,5 +1,5 @@
 export type SetupApplicationOptions = {
-  name: string
+  username: string
 }
 
 export interface ApplicationCoordinator {

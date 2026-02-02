@@ -15,6 +15,6 @@ class RtmWebSocketMessageBrokerConfiguration : WebSocketMessageBrokerConfigurer 
   }
 
   override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-    registry.addEndpoint("/rtm")
+    registry.addEndpoint("/rtm").withSockJS()
   }
 }
